@@ -17,12 +17,12 @@ import Landing from './components/Landing';
 import UserFavorites from './components/UserFavorites';
 import GameIndex from './components/GameIndex'
 import Arcade from './components/Arcade';
-
+import EditProfile from './components/EditProfile'
 import axios from 'axios';
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
  
 
-import EditProfile from './components/EditProfile'
+
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -94,17 +94,14 @@ function App() {
             user={currentUser} errorFlash={errorFlash} setErrorFlash={setErrorFlash} />}
           />
           <Route path="/about" component={ About } />
+
           <Route path="/game" component={ Game } errorFlash={errorFlash} setErrorFlash={setErrorFlash} />
           <PrivateRoute path="/profile" component={ Profile } user={currentUser} errorFlash={errorFlash} setErrorFlash={setErrorFlash} />
           <PrivateRoute path="/addgame" component={ GameForm } user={currentUser} errorFlash={errorFlash} setErrorFlash={setErrorFlash} />
           <PrivateRoute path="/editprofile" component= { EditProfile } user={ currentUser } errorFlash={errorFlash} setErrorFlash={setErrorFlash}/>
 
-            render={ (props) => <Login {...props} 
-            nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} 
-            user={currentUser} currentUserFaves={currentUserFaves} setCurrentUserFaves={setCurrentUserFaves}/>}
-          />
-     
-
+            
+    
           {/* The route below automatically renders landing when we load / */}
 
           <Route exact path="/"
@@ -127,7 +124,7 @@ function App() {
           setCurrentGame={setCurrentGame} currentUser={currentUser} 
           setCurrentUser={setCurrentUser} setCurrentUserFaves={setCurrentUserFaves} />} />
 
-          render={(props) => <Arcade {...props} currentGame={currentGame} setCurrentGame={setCurrentGame}/>} />
+          
 
 
         </Switch>
