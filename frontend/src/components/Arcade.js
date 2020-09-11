@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Iframe from 'react-iframe'
+import { Redirect, Link } from 'react-router-dom';
 
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 
 const Arcade = (props) => {
-
+let [redirect, setRedirect] = useState(false)
   const arcadeGame = () => {
     console.log(props.match.params)
     axios.get(`${REACT_APP_SERVER_URL}/api/games/${props.match.params.id}`)
@@ -25,7 +26,7 @@ const Arcade = (props) => {
   let handleLoading = 
   props.currentGame ? (
     <div className="cabinet">
-      <h1 className="pixel-text" id="game-title">{props.currentGame.name}</h1>
+      <h1 className="pixel-text" id="game-title">{props.currentGame.name ? props.currentGame.name : props.currentGame.title}</h1>
       <div className="arcade">
         <Iframe url={props.currentGame.gameUrl}
             className="myClassname"
@@ -54,22 +55,29 @@ const Arcade = (props) => {
       .then(response => {
         console.log(response)
         props.setCurrentUserFaves(response.data.favedGames)
+          setRedirect(true)
       })
       .catch(err => console.log(err))
     })
     .catch(err => console.log('SHAME ON YOU'))
+  }
+  if (redirect){
+    return <Redirect to="/profile/:id" />
+    
   }
 
   return(
     <div>
       {handleLoading}
       <form>
+      
         <button
         onClick={(e) => addFavorite(e)}
-        className="unclicked-fav"
+        className="unclicked-fav" 
         >
       Add to Favorites
         </button>
+      
       </form>
     {/* ADD DEPLOYED GAME LINK */}
     </div>

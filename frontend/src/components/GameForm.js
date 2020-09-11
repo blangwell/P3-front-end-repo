@@ -34,7 +34,7 @@ const GameForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newGame = { gameUrl, title, description, cohort, screenshot }
+        const newGame = { gameUrl, title, description, cohort, screenshot, author }
         axios.post(`${REACT_APP_SERVER_URL}/api/games/addgame`, newGame)
             .then(response => {
                 console.log(response);
@@ -46,8 +46,9 @@ const GameForm = (props) => {
                 setScreenShot('')
                 props.history.push('/profile')
             })
-            props.setErrorFlash('Make sure to include at lears URL and Title')
+            
             .catch(error => console.log(error));
+            props.setErrorFlash('Make sure to include at least URL and Title')
         }
 
 
