@@ -96,8 +96,10 @@ function App() {
           <Route path="/about" component={ About } />
 
           <Route path="/game" component={ Game } errorFlash={errorFlash} setErrorFlash={setErrorFlash} />
-          <PrivateRoute path="/profile" component={ Profile } user={currentUser}
-          errorFlash={errorFlash} setErrorFlash={setErrorFlash}
+
+          <PrivateRoute path="/profile" component={ Profile } user={currentUser} 
+          errorFlash={errorFlash} setErrorFlash={setErrorFlash} 
+
           currentUserFaves={currentUserFaves}
           />
           <PrivateRoute path="/addgame" component={ GameForm } user={currentUser} errorFlash={errorFlash} setErrorFlash={setErrorFlash} />

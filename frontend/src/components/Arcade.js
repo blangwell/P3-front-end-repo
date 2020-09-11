@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Iframe from 'react-iframe'
+import { Redirect, Link } from 'react-router-dom';
 
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 
 const Arcade = (props) => {
-
+let [redirect, setRedirect] = useState(false)
   const arcadeGame = () => {
     console.log(props.match.params)
     axios.get(`${REACT_APP_SERVER_URL}/api/games/${props.match.params.id}`)
@@ -21,18 +22,25 @@ const Arcade = (props) => {
     arcadeGame()
   }, [])
 
-  console.log('CURRENT GAME WAS MANIPULATED ', props.currentGame)
-  let handleLoading =
+
+  
+  // console.log('CURRENT GAME WAS MANIPULATED ', props.currentGame)
+  let handleLoading = 
   props.currentGame ? (
     <div className="cabinet">
-      <h1 className="pixel-text" id="game-title">{props.currentGame.title? props.currentGame.title : props.currentGame.name}</h1>
-      <div className="arcade">
-        <Iframe url={props.currentGame.gameUrl}
-            className="myClassname"
-            display="initial"
-            position="relative"
-            overflow="hidden" />
+
+      <div className="arcade-marquee">
+        <h1 className="pixel-text" id="game-title">{props.currentGame.name ? props.currentGame.name : props.currentGame.title}</h1>
+
+
       </div>
+        <div className="arcade-screen">
+          <Iframe url={props.currentGame.gameUrl}
+              className="arcade-screen-display"
+              display="initial"
+              position="relative"
+              overflow="hidden" />
+        </div>
       <h4>{props.currentGame.description != 'none' ? props.currentGame.description : ''}</h4>
     </div>
   ) : (
@@ -54,23 +62,32 @@ const Arcade = (props) => {
       .then(response => {
         console.log(response)
         props.setCurrentUserFaves(response.data.favedGames)
+          setRedirect(true)
       })
       .catch(err => console.log(err))
     })
     .catch(err => console.log('SHAME ON YOU'))
   }
+  if (redirect){
+    return <Redirect to="/profile/:id" />
+    
+  }
 
   return(
-    <div>
-      {handleLoading}
-      <form>
-        <button
-        onClick={(e) => addFavorite(e)}
-        className="unclicked-fav"
-        >
-      Add to Favorites
-        </button>
-      </form>
+
+    <div className="arcade-cabinet">
+        {handleLoading}
+      <div>
+        <button className="button" onClick={(e) => addFavorite(e)}>
+          Add to Favorites
+        </button><br /><br />
+        <a href={props.currentGame.gameUrl} target="_blank">
+          <button className="button">
+            Go to Deployed Game
+          </button><br /><br />
+        </a>
+      </div>
+
     {/* ADD DEPLOYED GAME LINK */}
     </div>
   )

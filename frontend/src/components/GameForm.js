@@ -46,7 +46,9 @@ const GameForm = (props) => {
                 setScreenShot('');
                 props.history.push('/profile')
             })
+
             .catch(error => console.log(error));
+            props.setErrorFlash('Make sure to include at least URL and Title')
         }
 
 
