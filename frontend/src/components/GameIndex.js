@@ -20,11 +20,11 @@ const GameIndex = (props) => {
       return (
         <div key={idx}
         >
-        <Link to={`/games/${g._id}`}>
-        <h3 className="sub-title">{g.name ? g.name : g.title}</h3>
+        <Link to={`/games/${g._id}`} style={{textDecoration: 'none'}}>
+        <h3 className="sub-title link">{g.name ? g.name : g.title}</h3>
         </Link>
-        <p>{g.gameUrl}</p>
-        <p>{g.description !== 'none' ? g.description : 'no description uploaded'}</p>
+        <a href={g.gameUrl} className="sub-title link">Link to Deployed App</a>
+        <p>{g.description !== 'none' ? g.description : ''}</p><br />
         </div>
       )
     })
@@ -34,7 +34,7 @@ const GameIndex = (props) => {
   let decideGames =
     props.currentGame.length > 0 ? (
       <div>
-        <h1 className="pixel-text">Them Games</h1>
+        <h1 className="pixel-text">GArcade</h1><br />
         {mapThemGames()}
       </div>
     ) : (

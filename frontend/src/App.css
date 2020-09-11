@@ -122,9 +122,9 @@ form{
   padding: 50px 10px;
   text-shadow: 0px 1px 10px #defe47;
 }
-.links { 
+.link:hover { 
   color: #defe47;
-  font-family: 'Press Start 2P', cursive;
+  text-decoration: none;
 }
 
 .formLabel{
@@ -185,8 +185,8 @@ form{
   margin: 20px 20px 20px;
 }
 .arcade-marquee {
-  background-color: #7700a6;
+  background-color: #65008e;
   border: 10px solid #490066;
-  box-shadow: 0px 0px 10px #defe47;
+  box-shadow: 0px 2px 20px #defe47;
   border-radius: 10px;
 }

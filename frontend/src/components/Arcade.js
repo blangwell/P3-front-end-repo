@@ -21,19 +21,21 @@ const Arcade = (props) => {
     arcadeGame()
   }, [])
   
-  console.log('CURRENT GAME WAS MANIPULATED ', props.currentGame)
+  // console.log('CURRENT GAME WAS MANIPULATED ', props.currentGame)
   let handleLoading = 
   props.currentGame ? (
     <div className="cabinet">
       <div className="arcade-marquee">
         <h1 className="pixel-text" id="game-title">{props.currentGame.name ? props.currentGame.name : props.currentGame.title}</h1>
       </div>
-      <div className="arcade-screen">
-        <Iframe url={props.currentGame.gameUrl}
-            className="myClassname"
-            display="initial"
-            position="relative"
-            overflow="hidden" />
+      <div className="overlay">
+        <div className="arcade-screen">
+          <Iframe url={props.currentGame.gameUrl}
+              className="myClassname"
+              display="initial"
+              position="relative"
+              overflow="hidden" />
+        </div>
       </div>
       <h4>{props.currentGame.description != 'none' ? props.currentGame.description : ''}</h4>
     </div>

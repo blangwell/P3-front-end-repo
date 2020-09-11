@@ -6,7 +6,7 @@ const Navbar = (props) => {
         // AUDIT NAVBAR LINKS
         <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: "#490066"}}>
             <div className="container">
-                <Link className="navbar-brand sub-title" to="/">GArcade</Link>
+                <Link className="navbar-brand pixel-text" to="/">GArcade</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="#navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
