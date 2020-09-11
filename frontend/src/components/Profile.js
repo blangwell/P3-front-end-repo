@@ -16,6 +16,7 @@ const Profile = (props) => {
         <h1 className="pixel-text">{props.user.name}'s Profile</h1><br />
         <div id="account-info">
             <h2 className="sub-title">Account Info</h2><br />
+
             <h5 className="sub-title">Username:</h5> 
             <p className="yellow-text">{props.user.name}</p> 
             <h5 className="sub-title">Email:</h5> 
@@ -25,6 +26,7 @@ const Profile = (props) => {
             <h5 className="sub-title">Uploaded Games</h5> 
             {/* <p className="yellow-text">uploaded games go here or link?</p>  */}
             <Link className="links" to="/addgame">Upload a Game </Link>
+
         </div>
       
 
