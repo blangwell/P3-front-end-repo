@@ -54,7 +54,7 @@ body {
   float: left;
   width: 50%;
   text-align: center;
- 
+
 }
 .error{
   background-image: url("https://media2.giphy.com/media/YyKPbc5OOTSQE/giphy.gif?cid=ecf05e473f794222f434dc066879fb32bcaa784f94fb064a&rid=giphy.gif");
@@ -64,20 +64,20 @@ body {
   align-items: center;
   text-align: center;
   margin-left: 5%
-  
+
 }
 .form-group{
   margin: 30px;
   border-radius: 20px;
   font-family: 'Press Start 2P', cursive;
-  
+
 }
 .home{
   text-align: center;
   font-size: 30px;
   font-family: 'Press Start 2P', cursive;
   color: #defe47;
- 
+
 
 }
 .input{
@@ -85,7 +85,7 @@ body {
   color:#7700a6;
   border-radius: 20px;
   font-family: 'Press Start 2P', cursive;
-  
+
 }
 label{
   color:#e9a7fa
@@ -155,9 +155,19 @@ form{
 }
 .devs{
   color:#defe47;
-
 }
+
+.error{
+  background:  red;
+  height: 30px;
+  width: 100vw;
+  color: black;
+  font-family: 'Russo One', sans-serif;
+  }
+
+
  #navLink{
   font-family: 'Russo One', sans-serif;
 
 }
+

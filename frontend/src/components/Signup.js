@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
-const Signup = () => {
+const Signup = (props) => {
     let [name, setName] = useState('');
     let [email, setEmail] = useState('')
     let [password, setPassword] = useState('');
@@ -36,15 +36,19 @@ const Signup = () => {
             .then(response => {
                 console.log(response);
                 setRedirect(true);
+                props.setErrorFlash("")
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                props.setErrorFlash("Could not create a User, make sure password match and email hasnt been use")
+                console.log(error)
+            });
         }
     }
 
     if (redirect) return <Redirect to="/login" />
 
     return (
-        
+
                 <div className="signupForm">
                     <h2 className="formLabel">Signup</h2>
                     <form onSubmit={handleSubmit}>
@@ -65,9 +69,10 @@ const Signup = () => {
                             <input type="password" name="confirmPassword" value={confirmPassword} onChange={handleConfirmPassword}  className="input"/>
                         </div>
                         <button type="submit" className="button">Submit</button>
+                        <div>{props.errorFlash}</div>
                     </form>
                 </div>
-           
+
     );
 
 }

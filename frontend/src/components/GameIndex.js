@@ -13,22 +13,7 @@ const GameIndex = (props) => {
     props.setCurrentGame(g)
     console.log('HERE BE THE PROPS', props)
   }
-<<<<<<< HEAD
   
-=======
-
-  // const getGames = () => {
-  //   axios.get(`${REACT_APP_SERVER_URL}/api/games/arcade`)
-  //   .then(response => {
-  //     console.log('RESPONSE HERE => ', response);
-  //     setGamesDisplayed(response);
-  //   })
-  //   .catch(err => console.log('error getting server data \n', err))
-  // }
-
-  // let gamesDisplayed = props.gamesDisplayed;
-
->>>>>>> 9ca6613082571f5919bb69d0696c6c5928793394
   let mapThemGames = () => {
     return props.currentGame.map((g, idx) => {
       // console.log('THiS A G', g)
