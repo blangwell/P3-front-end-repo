@@ -73,7 +73,7 @@ let [redirect, setRedirect] = useState(false)
       
         <button
         onClick={(e) => addFavorite(e)}
-        className="unclicked-fav" 
+        className="button" 
         >
       Add to Favorites
         </button>
