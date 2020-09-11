@@ -72,7 +72,7 @@ This is the layout of what we originally wanted for each sprint and an insight i
 
 - Lizz: Biggest challenge was actually managing the Github master repo and making sure everyone was able to receive code from pull requests that didn't overwrite code or create breaks in the code. I had to spend quite a bit of time studying git commands and best practices for merging to make our project code fluid and packaged properly.
 
-- Barent:
+- Barent: This project also offered me an excellent opportunity to gain familiarity with React, specifically the management of state in conjunction with backend database APIs, (in this case, mongoose ODM.) Becoming familiarized with the practical application of embedded references and the constraints/benefits using references in schema structure provides. With the favedGames array as an embedded reference in the User schema,  we were unable to push the entire game object into favedGames, only an ObjectId. This presented a serious challenge in getting the name of the favorite game to display. 
 
 - Cabassa: Merging/collaborating via GitHub has been a HUGE challenge :sweat_smile: I anticipate it becoming a big part of my career moving forward so I plan to do a WHOLE LOT more collaboration once this cohort is over because practice makes perfect! As far as the code, just agreeing on the DB schema among us was a whole back and forth.
 
@@ -106,7 +106,29 @@ let Game1 = (id) =>{
 
 - Lizz: My main victories came anytime I was able to assist someone on code that was not working properly or they were unsure of how to write it out. I also really loved making the links work within the site and redirecting to outside urls.
 
-- Barent:
+- Barent: For me, the most rewarding part of this experience was learning to successfully collaborate with other engineers. Up until this point, all of the apps I have worked on I have coded out by myself. Being able to work with a team of incredibly talented devs and share ownership over code was a valuable learning opportunity. 
+```javascript
+ const addFavorite = (e) => {    
+    e.preventDefault()
+    console.log('CURRENT GAME IN STATE : ', props.currentGame)
+    // make a call to the database that gets the users info by ID
+    axios.post(`${REACT_APP_SERVER_URL}/api/users/favorites/${props.currentUser.id}`,
+    {parameters: {
+      userId: props.currentUser.id,
+      currentGame: props.currentGame,
+    }})
+    .then(response => {
+      console.log('RESPONSE FROM BACK END : ', response)
+      axios.get(`${REACT_APP_SERVER_URL}/api/users/profile/${props.currentUser.id}`)
+      .then(response => {
+        props.setCurrentUserFaves(response.data.favedGames)
+          setRedirect(true)
+      })
+      .catch(err => console.log(err))
+    })
+    .catch(err => console.log('SHAME ON YOU'))
+```
+
 
 - Cabassa: My FAVORITE part of this whole project was working with my teammates to get the “Add to Favorites” function working. That code took an ENTIRE evening for us to bang out. The angst gave way to such sweet rapture when it finally worked, though... it was worth it!
 

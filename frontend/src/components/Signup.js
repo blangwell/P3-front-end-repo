@@ -40,7 +40,7 @@ const Signup = (props) => {
                 props.setErrorFlash("")
             })
             .catch(error => {
-                props.setErrorFlash("Could not create a User, make sure password match and email hasnt been use")
+                props.setErrorFlash("Could not create a User, please make sure passwords match and email hasn't been used already")
                 console.log(error)
             });
         }

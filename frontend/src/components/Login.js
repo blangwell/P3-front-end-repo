@@ -37,7 +37,7 @@ const Login = (props) => {
 
         })
         .catch(error => {
-            props.setErrorFlash("Error validating: Makes sure email and password are correct")
+            props.setErrorFlash("Error validating: Please Make sure email and password are correct")
             console.log(`Login error`, error)});
         }
         console.log(props.errorFlash)

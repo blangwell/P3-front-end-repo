@@ -48,7 +48,7 @@ const GameForm = (props) => {
             })
 
             .catch(error => console.log(error));
-            props.setErrorFlash('Make sure to include at least URL and Title')
+            props.setErrorFlash('Make sure to include at least a game URL and Title')
         }
 
 
