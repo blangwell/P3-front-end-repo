@@ -34,7 +34,7 @@ const GameForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newGame = { gameUrl, title, description, cohort, screenshot }
+        const newGame = { gameUrl, title, description, cohort, screenshot, author }
         axios.post(`${REACT_APP_SERVER_URL}/api/games/addgame`, newGame)
             .then(response => {
                 console.log(response);
@@ -43,10 +43,9 @@ const GameForm = (props) => {
                 setGameUrl('');
                 setDescription('');
                 setCohort('');
-                setScreenShot('')
+                setScreenShot('');
                 props.history.push('/profile')
             })
-            props.setErrorFlash('Make sure to include at lears URL and Title')
             .catch(error => console.log(error));
         }
 
@@ -54,8 +53,6 @@ const GameForm = (props) => {
     console.log(props);
     const userData = props.user ?
     (<div className="row">
-
-
         <form onSubmit={handleSubmit}>
         <div className="column">
             <div className="form-group">
@@ -79,7 +76,6 @@ const GameForm = (props) => {
                 <input type="screenshot" name="screenshot" value={screenshot} onChange={handleScreenShot} className="input" />
             </div>
             <button type="submit" className="button">Submit</button>
-            <div>{props.errorFlash}</div>
         </div>
 
 

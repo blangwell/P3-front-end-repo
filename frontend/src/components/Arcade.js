@@ -12,20 +12,20 @@ const Arcade = (props) => {
     axios.get(`${REACT_APP_SERVER_URL}/api/games/${props.match.params.id}`)
     .then(response => {
       props.setCurrentGame(response.data)
-      
+
     })
     .catch(err => {console.log(err)})
   }
-  
+
   useEffect(() => {
     arcadeGame()
   }, [])
-  
+
   console.log('CURRENT GAME WAS MANIPULATED ', props.currentGame)
-  let handleLoading = 
+  let handleLoading =
   props.currentGame ? (
     <div className="cabinet">
-      <h1 className="pixel-text" id="game-title">{props.currentGame.name}</h1>
+      <h1 className="pixel-text" id="game-title">{props.currentGame.title? props.currentGame.title : props.currentGame.name}</h1>
       <div className="arcade">
         <Iframe url={props.currentGame.gameUrl}
             className="myClassname"
@@ -39,7 +39,7 @@ const Arcade = (props) => {
     <h3 className="pixel-text">Loading Game</h3>
   )
 
-  const addFavorite = (e) => {    
+  const addFavorite = (e) => {
     e.preventDefault()
     console.log('CURRENT GAME IN STATE : ', props.currentGame)
     // make a call to the database that gets the users info by ID

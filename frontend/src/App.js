@@ -19,8 +19,9 @@ import GameIndex from './components/GameIndex'
 import Arcade from './components/Arcade';
 import EditProfile from './components/EditProfile'
 import axios from 'axios';
+import MyGames from './components/MyGames'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
- 
+
 
 
 
@@ -41,7 +42,6 @@ function App() {
   let [currentGame, setCurrentGame] = useState({})
   let [errorFlash, setErrorFlash] = useState("")
   let [currentUserFaves, setCurrentUserFaves] = useState([]);
-
 
 
   useEffect(() => {
@@ -96,16 +96,21 @@ function App() {
           <Route path="/about" component={ About } />
 
           <Route path="/game" component={ Game } errorFlash={errorFlash} setErrorFlash={setErrorFlash} />
-          <PrivateRoute path="/profile" component={ Profile } user={currentUser} errorFlash={errorFlash} setErrorFlash={setErrorFlash} />
+          <PrivateRoute path="/profile" component={ Profile } user={currentUser}
+          errorFlash={errorFlash} setErrorFlash={setErrorFlash}
+          currentUserFaves={currentUserFaves}
+          />
           <PrivateRoute path="/addgame" component={ GameForm } user={currentUser} errorFlash={errorFlash} setErrorFlash={setErrorFlash} />
           <PrivateRoute path="/editprofile" component= { EditProfile } user={ currentUser } errorFlash={errorFlash} setErrorFlash={setErrorFlash}/>
 
-            
-    
+
+
           {/* The route below automatically renders landing when we load / */}
 
           <Route exact path="/"
           render={(props) => <Landing {...props}/>}/>
+          <Route path="/mygames/:id"
+          render={(props) => <MyGames {...props} currentUser={currentUser}/>}/>
 
           <Route path="/arcade"
           render={(props) => <Arcade {...props}
@@ -120,11 +125,11 @@ function App() {
 
           <Route path="/games/:id"
 
-          render={(props) => <Arcade {...props} currentGame={currentGame} 
-          setCurrentGame={setCurrentGame} currentUser={currentUser} 
+          render={(props) => <Arcade {...props} currentGame={currentGame}
+          setCurrentGame={setCurrentGame} currentUser={currentUser}
           setCurrentUser={setCurrentUser} setCurrentUserFaves={setCurrentUserFaves} />} />
 
-          
+
 
 
         </Switch>

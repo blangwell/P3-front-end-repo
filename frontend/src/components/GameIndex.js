@@ -13,7 +13,7 @@ const GameIndex = (props) => {
     props.setCurrentGame(g)
     console.log('HERE BE THE PROPS', props)
   }
-  
+
   let mapThemGames = () => {
     return props.currentGame.map((g, idx) => {
       // console.log('THiS A G', g)
