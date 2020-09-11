@@ -22,18 +22,22 @@ let [redirect, setRedirect] = useState(false)
     arcadeGame()
   }, [])
   
-  console.log('CURRENT GAME WAS MANIPULATED ', props.currentGame)
+  // console.log('CURRENT GAME WAS MANIPULATED ', props.currentGame)
   let handleLoading = 
   props.currentGame ? (
     <div className="cabinet">
-      <h1 className="pixel-text" id="game-title">{props.currentGame.name ? props.currentGame.name : props.currentGame.title}</h1>
-      <div className="arcade">
-        <Iframe url={props.currentGame.gameUrl}
-            className="myClassname"
-            display="initial"
-            position="relative"
-            overflow="hidden" />
+
+      <div className="arcade-marquee">
+        <h1 className="pixel-text" id="game-title">{props.currentGame.name ? props.currentGame.name : props.currentGame.title}</h1>
+
       </div>
+        <div className="arcade-screen">
+          <Iframe url={props.currentGame.gameUrl}
+              className="arcade-screen-display"
+              display="initial"
+              position="relative"
+              overflow="hidden" />
+        </div>
       <h4>{props.currentGame.description != 'none' ? props.currentGame.description : ''}</h4>
     </div>
   ) : (
@@ -67,18 +71,20 @@ let [redirect, setRedirect] = useState(false)
   }
 
   return(
-    <div>
-      {handleLoading}
-      <form>
-      
-        <button
-        onClick={(e) => addFavorite(e)}
-        className="button" 
-        >
-      Add to Favorites
-        </button>
-      
-      </form>
+
+    <div className="arcade-cabinet">
+        {handleLoading}
+      <div>
+        <button className="button" onClick={(e) => addFavorite(e)}>
+          Add to Favorites
+        </button><br /><br />
+        <a href={props.currentGame.gameUrl} target="_blank">
+          <button className="button">
+            Go to Deployed Game
+          </button><br /><br />
+        </a>
+      </div>
+
     {/* ADD DEPLOYED GAME LINK */}
     </div>
   )

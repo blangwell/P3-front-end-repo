@@ -46,7 +46,7 @@ const GameForm = (props) => {
                 setScreenShot('')
                 props.history.push('/profile')
             })
-            
+
             .catch(error => console.log(error));
             props.setErrorFlash('Make sure to include at least URL and Title')
         }
@@ -80,7 +80,6 @@ const GameForm = (props) => {
                 <input type="screenshot" name="screenshot" value={screenshot} onChange={handleScreenShot} className="input" />
             </div>
             <button type="submit" className="button">Submit</button>
-            <div>{props.errorFlash}</div>
         </div>
 
 

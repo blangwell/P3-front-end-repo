@@ -45,11 +45,6 @@ body {
 #landing {
   text-align: center;
 }
-
-.myClassname {
-  height: calc(100vh - 95px) ;
-  width: 60% ;
-}
 .column {
   float: left;
   width: 50%;
@@ -110,21 +105,26 @@ form{
   color:#7700a6;
   border-radius: 20px;
   font-family: 'Press Start 2P', cursive;
-
   /* border: 2px solid blue; */
 }
-
+.button:hover{
+  cursor: pointer;
+  background: #7700a6;
+  color: #defe47;
+}
 
 .cabinet{
   text-align: center;
 }
 #game-title{
-  padding: 15px 0 30px;
+  padding: 50px 10px;
+  text-shadow: 0px 1px 10px #defe47;
 }
-.links{
+.link:hover { 
   color: #defe47;
-  font-family: 'Press Start 2P', cursive;
+  /* text-decoration: none; */
 }
+
 .formLabel{
   color: #e9a7fa;
   font-family: 'Press Start 2P', cursive;
@@ -171,3 +171,27 @@ form{
 
 }
 
+.arcade-cabinet {
+  border: 10px;
+  background-color: #35004a;
+  border-radius: 10px;
+  text-align: center;
+}
+.arcade-screen {
+  background-color: rgb(0, 0, 0, 0.5);
+  border-radius: 20px;
+  margin: 20px 20px 20px;
+}
+.arcade-screen-display{
+  height: calc(100vh - 95px) ;
+  width: 60% ;
+  margin: 30px 0;
+  border: none;
+  border-radius: 20px;
+}
+.arcade-marquee {
+  background-color: #65008e;
+  border: 10px solid #490066;
+  box-shadow: 0px 2px 20px #defe47;
+  border-radius: 10px;
+}
