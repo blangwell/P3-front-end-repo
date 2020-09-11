@@ -15,13 +15,7 @@ const Profile = (props) => {
         : <h4 className="pixel-text">Loading</h4>
 
 
-        const mapThemFaves =
-            props.currentUserFaves ? props.currentUserFaves.map((f, idx) => {
-                console.log(f)
-                const gameList = Game1(f)
-                return <div key={idx}><Link to={`/games/${f}`} key={idx}>{gameList}</Link><br /> </div>
-            })
-            : <li>Loading</li>
+
 
     const userData = props.user ?
 

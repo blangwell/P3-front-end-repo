@@ -76,7 +76,31 @@ This is the layout of what we originally wanted for each sprint and an insight i
 
 - Cabassa: Merging/collaborating via GitHub has been a HUGE challenge :sweat_smile: I anticipate it becoming a big part of my career moving forward so I plan to do a WHOLE LOT more collaboration once this cohort is over because practice makes perfect! As far as the code, just agreeing on the DB schema among us was a whole back and forth.
 
-- Martin:
+- Martin: Getting the functionality of rendering faveGames names as opposed to the ID was a struggle we couldn't overcome. I got the console.log to give us the name, but couldn't get it to render.
+ ```javascript 
+let Game1 = (id) =>{
+        console.log(id)
+        myGames.map((g, idx)=>{
+            if(g._id === id){
+                // console.log(g.title ? g.title : g.name)
+                return(
+                    <div>
+                        <div key={idx}>{ g.title ? g.title : g.name }</div>
+                    </div>
+                    )
+            } else {
+                return <></>
+            }
+        })
+
+        const mapThemFaves =
+            props.currentUserFaves ? props.currentUserFaves.map((f, idx) => {
+                console.log(f)
+                const gameList = Game1(f)
+                return <div key={idx}><Link to={/games/${f}} key={idx}>{gameList}</Link><br /> </div>
+            })
+            : <li>Loading</li>
+ ```
 
 ### The Victories
 

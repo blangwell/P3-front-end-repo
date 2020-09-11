@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Signup = (props) => {
+    console.log(REACT_APP_SERVER_URL)
     let [name, setName] = useState('');
     let [email, setEmail] = useState('')
     let [password, setPassword] = useState('');
