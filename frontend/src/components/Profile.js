@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios'
+const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Profile = (props) => {
+
+
+    
     console.log('PROFILE PROPZ : ', props)
     const mapThemFaves =
         props.currentUserFaves ? props.currentUserFaves.map((f, idx) => {
@@ -10,24 +15,34 @@ const Profile = (props) => {
         : <h4 className="pixel-text">Loading</h4>
 
 
+        const mapThemFaves =
+            props.currentUserFaves ? props.currentUserFaves.map((f, idx) => {
+                console.log(f)
+                const gameList = Game1(f)
+                return <div key={idx}><Link to={`/games/${f}`} key={idx}>{gameList}</Link><br /> </div>
+            })
+            : <li>Loading</li>
+
     const userData = props.user ?
 
     (<div>
         <h1 className="pixel-text">{props.user.name}'s Profile</h1><br />
         <div id="account-info">
             <h2 className="sub-title">Account Info</h2><br />
-
             <h5 className="sub-title">Username:</h5> 
             <p className="pixel-text">{props.user.name}</p> 
             <h5 className="sub-title">Email:</h5> 
             <p className="pixel-text">{props.user.email}</p> 
             <h5 className="sub-title">Favorites</h5> 
             {mapThemFaves ? mapThemFaves : 'Loading'}<br />
-            {/* <p className="yellow-text">uploaded games go here or link?</p>  */}
+
+             <Link to="/EditProfile"><h5 className="sub-title">Edit Profile</h5> </Link>
+            <Link to={`/MyGames/${props.user.id}`}><h5 className="sub-title">Delete My games</h5> </Link>
+           
             <Link className="pixel-text link" to="/addgame">Upload a Game </Link>
 
         </div>
-      
+
 
     </div>) : <h4>Loading...</h4>
 

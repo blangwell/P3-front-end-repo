@@ -13,14 +13,16 @@ let [redirect, setRedirect] = useState(false)
     axios.get(`${REACT_APP_SERVER_URL}/api/games/${props.match.params.id}`)
     .then(response => {
       props.setCurrentGame(response.data)
-      
+
     })
     .catch(err => {console.log(err)})
   }
-  
+
   useEffect(() => {
     arcadeGame()
   }, [])
+
+
   
   // console.log('CURRENT GAME WAS MANIPULATED ', props.currentGame)
   let handleLoading = 
@@ -29,6 +31,7 @@ let [redirect, setRedirect] = useState(false)
 
       <div className="arcade-marquee">
         <h1 className="pixel-text" id="game-title">{props.currentGame.name ? props.currentGame.name : props.currentGame.title}</h1>
+
 
       </div>
         <div className="arcade-screen">
@@ -44,7 +47,7 @@ let [redirect, setRedirect] = useState(false)
     <h3 className="pixel-text">Loading Game</h3>
   )
 
-  const addFavorite = (e) => {    
+  const addFavorite = (e) => {
     e.preventDefault()
     console.log('CURRENT GAME IN STATE : ', props.currentGame)
     // make a call to the database that gets the users info by ID

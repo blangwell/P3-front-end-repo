@@ -43,7 +43,7 @@ const GameForm = (props) => {
                 setGameUrl('');
                 setDescription('');
                 setCohort('');
-                setScreenShot('')
+                setScreenShot('');
                 props.history.push('/profile')
             })
 
@@ -55,8 +55,6 @@ const GameForm = (props) => {
     console.log(props);
     const userData = props.user ?
     (<div className="row">
-
-
         <form onSubmit={handleSubmit}>
         <div className="column">
             <div className="form-group">
