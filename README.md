@@ -74,7 +74,7 @@ This is the layout of what we originally wanted for each sprint and an insight i
 
 - Barent:
 
-- Cabassa: 
+- Cabassa: Merging/collaborating via GitHub has been a HUGE challenge :sweat_smile: I anticipate it becoming a big part of my career moving forward so I plan to do a WHOLE LOT more collaboration once this cohort is over because practice makes perfect! As far as the code, just agreeing on the DB schema among us was a whole back and forth.
 
 - Martin:
 
@@ -84,14 +84,34 @@ This is the layout of what we originally wanted for each sprint and an insight i
 
 - Barent:
 
-- Cabassa: 
+- Cabassa: My FAVORITE part of this whole project was working with my teammates to get the “Add to Favorites” function working. That code took an ENTIRE evening for us to bang out. The angst gave way to such sweet rapture when it finally worked, though... it was worth it!
 
-- Martin:
+- Martin: Figuring out how to get the Iframe height and width to render properly!
+```javascript
+.myClassname {
+  height: calc(100vh - 95px) ;
+  width: 60% ;
+}
+```
 
 ### Major Hurdle
 
-Our biggest issue as a team was figuring out how to get favorite games to be added to the User's favedGames array. It took 2 days, 4 devs, 3 instructors and a lot of patience to finally get this functionality working. The final product of this coding issue is below.
-```javascript ```
+Our biggest issue as a team was figuring out how to get favorite games to be added to the User's favedGames array. It took 2 days, 4 devs, 3 instructors and a lot of patience to finally get this functionality working. The final product of this coding issue is below. We still aren't able to get the game titles to render in the favorites list, but we have the object Id posting, and considering how much went into that, we moved titles to a stretch goal, post project.
+```javascript 
+// ADD GAME TO FAVORITES
+router.post('/favorites/:id', (req, res) => {
+  let userId = req.body.parameters.userId
+  let currentGame = req.body.parameters.currentGame
+  console.log('BACKEND LOOOOGIN', currentGame);
+  db.User.findByIdAndUpdate(userId,
+    {$addToSet: {favedGames: currentGame}}, {new: true})
+ .then(response => {
+    console.log('HERES THE RESPONSE FROM POST', response)
+    res.status(200).json({response})
+  })
+  .catch(err => console.log('ERROR IN BACK END', err))
+})
+```
 
 
 ### What comes next?
