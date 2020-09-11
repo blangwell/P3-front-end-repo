@@ -5,29 +5,30 @@ const Profile = (props) => {
     console.log('PROFILE PROPZ : ', props)
     const mapThemFaves =
         props.currentUserFaves ? props.currentUserFaves.map((f, idx) => {
-            return <div key={idx}><Link to={`/games/${f}`} key={idx}>{f}</Link><br /> </div>
+            return <div key={idx}><Link to={`/games/${f}`} key={idx} className="pixel-text">{f}</Link><br /> </div>
         })
-        : <li>Loading</li>
+        : <h4 className="pixel-text">Loading</h4>
 
 
-    // console.log(props);
-    const userData = props.user ? 
+    const userData = props.user ?
+
     (<div>
         <h1 className="pixel-text">{props.user.name}'s Profile</h1><br />
         <div id="account-info">
             <h2 className="sub-title">Account Info</h2><br />
+
             <h5 className="sub-title">Username:</h5> 
-            <p className="yellow-text">{props.user.name}</p> 
+            <p className="pixel-text">{props.user.name}</p> 
             <h5 className="sub-title">Email:</h5> 
-            <p className="yellow-text">{props.user.email}</p> 
+            <p className="pixel-text">{props.user.email}</p> 
             <h5 className="sub-title">Favorites</h5> 
-            {mapThemFaves ? mapThemFaves : 'Loading'}
+            {mapThemFaves ? mapThemFaves : 'Loading'}<br />
             <h5 className="sub-title">Uploaded Games</h5> 
-            <p className="yellow-text">uploaded games go here or link?</p> 
+            {/* <p className="yellow-text">uploaded games go here or link?</p>  */}
+            <Link className="links" to="/addgame">Upload a Game </Link>
+
         </div>
-        <div className="home">
-          <Link className="links" to="/addgame">Upload a Game </Link>
-      </div>
+      
 
     </div>) : <h4>Loading...</h4>
 

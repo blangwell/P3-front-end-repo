@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import axios from 'axios';
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
 
 
 
@@ -29,14 +30,11 @@ const EditProfile = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newProfile = { userId, linkedIn, github, profilePic, portfolioUrl }
-        axios.put(`${REACT_APP_SERVER_URL}/api/users/editprofile`, newProfile)
+        const newProfile = { linkedIn, github, profilePic, portfolioUrl }
+        axios.put(`${REACT_APP_SERVER_URL}/api/users/editprofile/${userId}`, newProfile)
             .then(response => {
-                console.log(response);
-                setLinkedIn('');
-                setGithub('');
-                setProfilePic('');
-                setPortfolioUrl('');
+                props.history.push('/profile')
+
             })
             .catch(error => console.log(error));
         }

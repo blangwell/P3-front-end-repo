@@ -17,6 +17,10 @@ body {
   width: 100%;
   height: 60px; /* Set the fixed height of the footer here */
   line-height: 60px; /* Vertically center the text there */
+  background: #e0fe47e8;
+  font-family: 'Russo One', sans-serif;
+  color: #7700a6
+
 }
 .game {
   background-color: black;
@@ -50,7 +54,7 @@ body {
   float: left;
   width: 50%;
   text-align: center;
- 
+
 }
 .error{
   background-image: url("https://media2.giphy.com/media/YyKPbc5OOTSQE/giphy.gif?cid=ecf05e473f794222f434dc066879fb32bcaa784f94fb064a&rid=giphy.gif");
@@ -60,20 +64,20 @@ body {
   align-items: center;
   text-align: center;
   margin-left: 5%
-  
+
 }
 .form-group{
   margin: 30px;
   border-radius: 20px;
   font-family: 'Press Start 2P', cursive;
-  
+
 }
 .home{
   text-align: center;
   font-size: 30px;
   font-family: 'Press Start 2P', cursive;
   color: #defe47;
- 
+
 
 }
 .input{
@@ -81,7 +85,7 @@ body {
   color:#7700a6;
   border-radius: 20px;
   font-family: 'Press Start 2P', cursive;
-  
+
 }
 label{
   color:#e9a7fa
@@ -115,7 +119,8 @@ form{
   text-align: center;
 }
 #game-title{
-  padding: 15px 0 30px;
+  padding: 50px 10px;
+  text-shadow: 0px 1px 10px #defe47;
 }
 .links { 
   color: #defe47;
@@ -129,8 +134,8 @@ form{
   margin-left: 7%;
 
 }
-.about{
-  width: 800px;
+.head{
+  width: 60vw;
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -138,10 +143,50 @@ form{
   font-size: 1rem;
   font-family: 'Press Start 2P', cursive;
   color:#defe47;
-  text-shadow:2px 2px  blue;
+  /* text-shadow:2px 2px  blue; */
+
+}
+.about{
+  font-family: 'Russo One', sans-serif;
+  color: #e9a7fa;
+  text-align: center;
+  font-size: 1.2rem;
+  width: 80vw;
+  /* text-shadow:2px 2px; */
 
 }
 .devs{
   color:#defe47;
+}
 
+.error{
+  background:  red;
+  height: 30px;
+  width: 100vw;
+  color: black;
+  font-family: 'Russo One', sans-serif;
+  }
+
+
+ #navLink{
+  font-family: 'Russo One', sans-serif;
+
+}
+
+.arcade-cabinet {
+  border: 10px;
+  background-color: #35004a;
+  border-radius: 10px;
+
+}
+.arcade-screen {
+  background-color: rgb(0, 0, 0, 0.5);
+  border-radius: 20px;
+  margin: 20px 20px 20px;
+}
+.arcade-marquee {
+  background-color: #7700a6;
+  border: 10px solid #490066;
+  box-shadow: 0px 0px 10px #defe47;
+  border-radius: 10px;
 }

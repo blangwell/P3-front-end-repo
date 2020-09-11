@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer bg-dark">
+        <footer className="footer ">
             <div className="container text-center">
-                <span className="text-muted">@2020 Built with MERN (affected by COVID)</span>
+                <span>Copyright© Marent Lizzbassa SEIR 713 2020</span>
             </div>
         </footer>
     )

@@ -33,15 +33,27 @@ const Login = (props) => {
             const decoded = jwt_decode(token);
             // Set current user
             props.nowCurrentUser(decoded);
-        })
-        .catch(error => console.log(`Login error`, error));
-    }
+            props.setErrorFlash("")
 
+        })
+        .catch(error => {
+            props.setErrorFlash("Error validating: Makes sure email and password are correct")
+            console.log(`Login error`, error)});
+        }
+        console.log(props.errorFlash)
+    let showError = () =>{
+        if (props.errorFlash===""){
+            return null
+        } else {
+            return <div className="error">{props.errorFlash}</div>
+        }
+    }
     if (props.user) return <Redirect to="/profile" user={props.user} />;
 
     return (
-   
+
                 <div className="loginForm">
+
                     <h2 className="formLabel">Login</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
@@ -53,10 +65,11 @@ const Login = (props) => {
                             <input type="password" name="password" value={password} onChange={handlePassword} className="input" required />
                         </div>
                         <button type="submit" className="button">Submit</button>
+                        <div>{props.errorFlash}</div>
                     </form>
                 </div>
-            
+
     );
 }
 
-export default Login;   
+export default Login;

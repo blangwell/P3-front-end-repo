@@ -25,8 +25,10 @@ const Arcade = (props) => {
   let handleLoading = 
   props.currentGame ? (
     <div className="cabinet">
-      <h1 className="pixel-text" id="game-title">{props.currentGame.name}</h1>
-      <div className="arcade">
+      <div className="arcade-marquee">
+        <h1 className="pixel-text" id="game-title">{props.currentGame.name ? props.currentGame.name : props.currentGame.title}</h1>
+      </div>
+      <div className="arcade-screen">
         <Iframe url={props.currentGame.gameUrl}
             className="myClassname"
             display="initial"
@@ -61,16 +63,18 @@ const Arcade = (props) => {
   }
 
   return(
-    <div>
-      {handleLoading}
-      <form>
-        <button
-        onClick={(e) => addFavorite(e)}
-        className="unclicked-fav"
-        >
-      Add to Favorites
-        </button>
-      </form>
+    <div className="arcade-cabinet">
+        {handleLoading}
+      <div>
+        <form>
+          <button
+          onClick={(e) => addFavorite(e)}
+          className="button"
+          >
+        Add to Favorites
+          </button>
+        </form><br />
+      </div>
     {/* ADD DEPLOYED GAME LINK */}
     </div>
   )
