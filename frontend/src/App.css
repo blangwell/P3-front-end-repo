@@ -116,11 +116,12 @@ form{
 }
 #game-title{
   padding: 15px 0 30px;
-
-.links{
+}
+.links { 
   color: #defe47;
   font-family: 'Press Start 2P', cursive;
 }
+
 .formLabel{
   color: #e9a7fa;
   font-family: 'Press Start 2P', cursive;
@@ -143,3 +144,4 @@ form{
 .devs{
   color:#defe47;
 
+}
