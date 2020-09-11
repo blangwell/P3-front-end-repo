@@ -71,7 +71,7 @@ const Arcade = (props) => {
         </button><br /><br />
         <a href={props.currentGame.gameUrl} target="_blank">
           <button className="button">
-            Go to deployed game
+            Go to Deployed Game
           </button><br /><br />
         </a>
       </div>
