@@ -23,9 +23,8 @@ const Profile = (props) => {
             <p className="pixel-text">{props.user.email}</p> 
             <h5 className="sub-title">Favorites</h5> 
             {mapThemFaves ? mapThemFaves : 'Loading'}<br />
-            <h5 className="sub-title">Uploaded Games</h5> 
             {/* <p className="yellow-text">uploaded games go here or link?</p>  */}
-            <Link className="links" to="/addgame">Upload a Game </Link>
+            <Link className="pixel-text link" to="/addgame">Upload a Game </Link>
 
         </div>
       

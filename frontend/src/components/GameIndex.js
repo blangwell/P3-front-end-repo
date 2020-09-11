@@ -21,7 +21,7 @@ const GameIndex = (props) => {
         <div key={idx}
         >
         <Link to={`/games/${g._id}`} style={{textDecoration: 'none'}}>
-        <h3 className="sub-title link">{g.name ? g.name : g.title}</h3>
+        <h3 className="pixel-text link">{g.name ? g.name : g.title}</h3>
         </Link>
         <a href={g.gameUrl} className="sub-title link">Link to Deployed App</a>
         <p>{g.description !== 'none' ? g.description : ''}</p><br />
