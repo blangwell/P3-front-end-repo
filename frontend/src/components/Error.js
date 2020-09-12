@@ -6,7 +6,7 @@ const Error = () => {
              <div className="home">
           <Link className="links" to="/">Go to Home </Link>
       </div>
-      <div className="error">
+      <div className="error1">
        
        
       </div>
