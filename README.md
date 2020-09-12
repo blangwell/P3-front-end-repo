@@ -6,6 +6,9 @@ Who doesn't love to play games? And who doesn't love to support their fellow cla
 
 Please note: This is a decoupled app. For the full experience, it can be used in conjunction with the server-side repo [here.](https://github.com/Lizzwest/P3-back-end-repo)
 
+## The site
+![Garcade](frontend/public/assets/arcade.png?raw=true)
+
 ## Instructions to install
 
 - Fork and clone this repo. 
