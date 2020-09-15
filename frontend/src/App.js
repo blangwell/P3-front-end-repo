@@ -65,7 +65,7 @@ function App() {
   }, [currentUser ? currentUser.id : '']);
 
   const nowCurrentUser = (userData) => {
-    console.log('nowCurrentUser is working...');
+    console.log('this ones for you adam');
     setCurrentUser(userData);
     setIsAuthenticated(true);
   };
