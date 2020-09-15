@@ -123,7 +123,7 @@ function App() {
 
           <Route path="/games/index"
           render={(props) => <GameIndex {...props} currentGame={currentGame} setCurrentGame={setCurrentGame}/>} />
-          <Route path="*" component={Error} />
+         
 
           <Route path="/games/:id"
 
@@ -131,7 +131,7 @@ function App() {
           setCurrentGame={setCurrentGame} currentUser={currentUser}
           setCurrentUser={setCurrentUser} setCurrentUserFaves={setCurrentUserFaves} />} />
 
-
+          <Route path="*" component={Error} />
 
 
         </Switch>
