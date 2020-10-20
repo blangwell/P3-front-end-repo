@@ -39,9 +39,11 @@ body {
 .yellow-text {
   color: #defe47;
 }
-#landing-title {
+.page-title {
   font-size: 50px;
   color: #F9F871;
+  font-family: 'Press Start 2P', cursive;
+
 }
 
 #cabinet-far {
@@ -155,12 +157,15 @@ form{
   color: #e9a7fa;
   text-align: center;
   font-size: 1.2rem;
-  width: 80vw;
-  /* text-shadow:2px 2px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
 }
-.devs{
-  color:#defe47;
+
+.devs {
+  color:#F9F871;
 }
 
 .error{
@@ -203,8 +208,12 @@ form{
 }
 
 
-.about {
-  background-color: rgb(0, 0, 0, 0.9);
+.about-blurb {
+  background-color: rgb(0, 0, 0, 0.8);
   line-height: 35px;
+  padding: 20px 30px 5px;
+  text-align: justify;
+  text-justify: auto;
+  border-radius: 20px;
 }
 
