@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
 html {
   position: relative;
   min-height: 100%;
@@ -226,10 +226,14 @@ form{
 .about-blurb {
   background-color: rgb(0, 0, 0, 0.8);
   line-height: 35px;
+  margin: 10px;
   padding: 20px 30px 5px;
   text-align: justify;
   text-justify: auto;
   border-radius: 20px;
+  font-size: 25px;
+  font-family: 'Ubuntu Mono', monospace;
+
 }
 
 .pacman-gif {

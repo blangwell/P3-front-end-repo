@@ -11,11 +11,11 @@ const About = () => {
             
             <div className="about-blurb">
                 <p>
-                    <strong>Project One...</strong> seems like forever ago, right?
-                    How many of us have revisited our games? Replayed our cohort mates games?
+                    <strong>Project One</strong> seems like forever ago, right?
+                    How many of us have revisited our games? Replayed our cohort-mates games?
                     If we haven't, maybe it's because we would have to go to github, find the creator's account,
-                    find the repo, find the github pages link.... Well, not anymore. One spot. For all our games.
-                    Enter: <strong>GArcade</strong> . Here you can submit your games from Project One (or any others you've created!) and
+                    find the repo, find the github pages link, and so on. Well, not anymore! One spot. For all our games.
+                    Enter: <strong>GArcade</strong>. Here you can submit your games from SEI Project One (or any others you've created!) and
                     play your classmates games as well! Maybe you're looking for something new? Well, devs from ALL cohorts will
                     have the ability to create a User account and upload their games as well! The idea behind this
                     was to create a place where we can all come together, support our previous works, and continue to develop, submit and grow!
