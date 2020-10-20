@@ -16,7 +16,6 @@ const GameIndex = (props) => {
 
   let mapThemGames = () => {
     return props.currentGame.map((g, idx) => {
-      // console.log('THiS A G', g)
       return (
         <div key={idx}
         >
@@ -35,7 +34,7 @@ const GameIndex = (props) => {
     props.currentGame.length > 0 ? (
       <div>
         <h1 className="pixel-text">GArcade</h1><br />
-        {mapThemGames()}
+        { mapThemGames() }
       </div>
     ) : (
       <div id="loading">
