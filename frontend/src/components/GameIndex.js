@@ -16,7 +16,6 @@ const GameIndex = (props) => {
 
   let mapThemGames = () => {
     return props.currentGame.map((g, idx) => {
-      // console.log('THiS A G', g)
       return (
         <div key={idx}
         >
@@ -35,10 +34,17 @@ const GameIndex = (props) => {
     props.currentGame.length > 0 ? (
       <div>
         <h1 className="pixel-text">GArcade</h1><br />
-        {mapThemGames()}
+        { mapThemGames() }
       </div>
     ) : (
-      <h3 className="pixel-text">Loading the Arcade 💨</h3>
+      <div id="loading">
+        <h3 className="pixel-text">
+          Loading the Arcade
+          <img className="pacman-gif" src="https://i.gifer.com/origin/f2/f2726893541a7446b988ba7743c5296c_w200.gif" />
+          ...
+        </h3>
+      </div>
+      
     )
 
   useEffect(() => {
