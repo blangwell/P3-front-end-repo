@@ -217,3 +217,8 @@ form{
   border-radius: 20px;
 }
 
+.pacman-gif {
+  width: 30px;
+  height: auto;
+  margin: 0 10px;
+}
