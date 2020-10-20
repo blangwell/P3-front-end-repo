@@ -8,7 +8,7 @@ html {
 }
 body {
   background-color: #50168e;
-  background-image: url('https://i.pinimg.com/originals/7c/60/1a/7c601ac6987f11ccf64668c952f0e6f2.jpg');
+  background-image: url('./GArcade-bg-2.jpg');
   background-size: cover;
   margin-bottom: 60px; /* Margin bottom by footer height */
   font-family: 'Roboto', sans-serif;
