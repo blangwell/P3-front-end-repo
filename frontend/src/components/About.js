@@ -23,13 +23,15 @@ const About = () => {
                     <br /><br />
                         Questions? Comments? Wanna see more from us? Feel free to reach out to any of the devs via LinkedIn or check out our work on Github!
                         <br /><br />
-                    <div id="dev-div">
-                        Martin Briceno: <a className="devs" target="_blank" href="https://github.com/mgustavob">Github </a><a className="devs" target="_blank" href="https://www.linkedin.com/in/martin-briceno-0825511b0/">LinkedIn</a><br />
-                        David Cabassa: <a className="devs" target="_blank" href="https://github.com/decpdx584">Github </a><a className="devs" target="_blank" href="https://www.linkedin.com/in/decpdx584/">LinkedIn</a><br />
-                        Barent Langwell: <a className="devs" target="_blank" href="https://github.com/blangwell">Github </a><a className="devs" target="_blank" href="https://www.linkedin.com/in/blangwell/">LinkedIn</a><br />
-                        Lizz West: <a className="devs" target="_blank" href="https://github.com/lizzwest">Github </a><a className="devs" target="_blank" href="https://www.linkedin.com/in/lizzwest/">LinkedIn</a>
-                    </div>
                 </p>
+                    <div id="dev-div">
+                        <p>
+                            Martin Briceno: <a className="devs" target="_blank" href="https://github.com/mgustavob">Github </a><a className="devs" target="_blank" href="https://www.linkedin.com/in/martin-briceno-0825511b0/">LinkedIn</a><br />
+                            David Cabassa: <a className="devs" target="_blank" href="https://github.com/decpdx584">Github </a><a className="devs" target="_blank" href="https://www.linkedin.com/in/decpdx584/">LinkedIn</a><br />
+                            Barent Langwell: <a className="devs" target="_blank" href="https://github.com/blangwell">Github </a><a className="devs" target="_blank" href="https://www.linkedin.com/in/blangwell/">LinkedIn</a><br />
+                            Lizz West: <a className="devs" target="_blank" href="https://github.com/lizzwest">Github </a><a className="devs" target="_blank" href="https://www.linkedin.com/in/lizzwest/">LinkedIn</a>
+                        </p>
+                    </div>
             </div>
         </div>
     );
