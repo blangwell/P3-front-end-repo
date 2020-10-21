@@ -7,12 +7,12 @@ const Navbar = (props) => {
         <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: "#7D2486"}}>
             <div className="container">
                 <Link className="navbar-brand pixel-text" to="/">GArcade</Link>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="#navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="#navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div className="collapse navbar-collapse">
-                    <ul className="navbar-nav ">
+                <div className="collapse navbar-collapse" id="navbarText">
+                    <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
                             <NavLink className="nav-link" exact to="/">Home</NavLink>
                         </li>

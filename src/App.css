@@ -46,18 +46,25 @@ body {
 
 }
 
-#cabinet-far {
+/* #cabinet-far {
+  position: relative;
+  bottom: -100px;
   width: 400px;
   height: auto;
-}
+} */
+
 #landing {
-  text-align: center;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
 .column {
   float: left;
   width: 50%;
   text-align: center;
-
 }
 
 #error-page {
